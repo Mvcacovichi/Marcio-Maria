@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossa História - Marcio e Maria</title>
+  <meta name="description" content="A linda história do nosso relacionamento.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="android-chrome-192x192.png">
+
+  <!-- Estilos Externos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Foto e Decorações -->
+    <div class="profile-img-container">
+      <div class="floating-heart heart-1">💖</div>
+      <div class="floating-heart heart-2">✨</div>
+      <div class="floating-heart heart-3">💕</div>
+      <img src="images/Principal.jpg" alt="Foto do casal Marcio e Maria" class="profile-img">
+    </div>
+
+    <!-- Títulos Otimizados -->
+    <h1>História do Casal</h1>
+    <h2>Marcio & Maria</h2>
+
+    <p class="intro-text">
+      Onde os nossos caminhos se cruzaram e duas histórias se tornaram uma só.
+    </p>
+
+    <!-- Divisor Romântico Animado -->
+    <div class="timeline-divider">
+      <div class="line"></div>
+      <div class="heart-icon">❤️</div>
+      <div class="line"></div>
+      <div class="heart-icon">❤️</div>
+      <div class="line"></div>
+    </div>
+
+    <!-- Linha do Tempo (Substituindo a antiga lista) -->
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-title">2024 - O Início de Tudo</div>
+        <div class="timeline-content">
+          Nos conhecemos através das redes sociais. Uma simples troca de mensagens que rapidamente se tornou a parte
+          favorita do nosso dia.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-title">O Primeiro Encontro</div>
+        <div class="timeline-content">
+          A ansiedade, os sorrisos tímidos e a certeza imediata de que aquilo era muito mais que apenas um encontro
+          casual.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-title">Tornando Oficial</div>
+        <div class="timeline-content">
+          O dia em que decidimos que nossos caminhos não se separariam mais e começamos a construir nossa vida juntos.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-title">Sonhos e Futuro</div>
+        <div class="timeline-content">
+          Compartilhando não apenas o presente, mas construindo todos os planos e aventuras que ainda viveremos lado a
+          lado.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Elemento de Áudio Oculto -->
+  <audio id="bg-music" loop>
+    <!-- Música romântica padrão do Pixabay. Você pode baixar seu próprio .mp3 e mudar o 'src' para o seu arquivo local -->
+    <source src="https://cdn.pixabay.com/audio/2022/02/10/audio_fc862ce253.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Botão Flutuante de Música -->
+  <button id="music-btn" class="music-btn" onclick="toggleMusic()" aria-label="Tocar/Pausar Música">
+    🎵
+  </button>
+
+  <script>
+    function toggleMusic() {
+      const music = document.getElementById('bg-music');
+      const btn = document.getElementById('music-btn');
+
+      if (music.paused) {
+        music.play().then(() => {
+          btn.innerHTML = '⏸️';
+          btn.classList.add('playing');
+        }).catch(err => {
+          console.error("Erro ao tocar a música. O navegador bloqueou ou o arquivo não foi encontrado.", err);
+        });
+      } else {
+        music.pause();
+        btn.innerHTML = '🎵';
+        btn.classList.remove('playing');
+      }
+    }
+  </script>
+
+</body>
+
+</html>
